@@ -20,25 +20,20 @@
     export default {
         name: "urls",
         mounted(){
+
             var currentUrl = window.location.pathname;
             console.log(currentUrl);
 
-            axios.get('https://api.geainternacional.com/v1/endpoints/micrositios').then( response => { // returns a promise
-                //var endp = response.data[0].endpoint ;
-                var endp = response.data[0];
-                console.log(endp);
 
+            axios.get('https://api.geainternacional.com/v1/endpoints/micrositios').then( response => {
+                var res = response.data;
+                console.log(res);
 
-                document.getElementById("content").innerHTML = endp;
-
-                /*for (const res in response.data) {
-                    console.log(`response.${res} = ${response[res]}`);
+                for(let item  of res){
+                    console.log(item);
                 }
-        */
+
             });
-
-
-
 
         }
     }

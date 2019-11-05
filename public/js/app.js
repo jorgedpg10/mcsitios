@@ -1899,15 +1899,31 @@ __webpack_require__.r(__webpack_exports__);
     var currentUrl = window.location.pathname;
     console.log(currentUrl);
     axios.get('https://api.geainternacional.com/v1/endpoints/micrositios').then(function (response) {
-      // returns a promise
-      //var endp = response.data[0].endpoint ;
-      var endp = response.data[0];
-      console.log(endp);
-      document.getElementById("content").innerHTML = endp;
-      /*for (const res in response.data) {
-          console.log(`response.${res} = ${response[res]}`);
+      var res = response.data;
+      console.log(res);
+      var _iteratorNormalCompletion = true;
+      var _didIteratorError = false;
+      var _iteratorError = undefined;
+
+      try {
+        for (var _iterator = res[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+          var item = _step.value;
+          console.log(item);
+        }
+      } catch (err) {
+        _didIteratorError = true;
+        _iteratorError = err;
+      } finally {
+        try {
+          if (!_iteratorNormalCompletion && _iterator["return"] != null) {
+            _iterator["return"]();
+          }
+        } finally {
+          if (_didIteratorError) {
+            throw _iteratorError;
+          }
+        }
       }
-      */
     });
   }
 });
