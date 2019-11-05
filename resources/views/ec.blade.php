@@ -4,18 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Micrositios 5.6</title>
+    <title>Mcsitios</title>
 
 </head>
 <body>
 <section id="control-center">
     <button id="get-btn">GET Data</button>
     <div id="content"></div>
-    <div id="contenido"></div>
 </section>
 
 <div id="app">
-    <example-component></example-component>
+    <urls></urls>
 </div>
 
 
