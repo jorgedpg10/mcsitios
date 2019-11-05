@@ -23,15 +23,30 @@
 
             var currentUrl = window.location.pathname;
             console.log(currentUrl);
+            console.log(currentUrl.replace('/',''));
+
+            const datos = [
+                { type: 'ec', ep: 'alsdjflkaklsd'},{ type: 'pa', ep: 'alsdjflkaklsd'}]
+            undefined
+            datos.filter(dato => dato === 'ec')
+            Array []
+
+            datos.filter(dato => dato.type === 'ec')
+            Array [ {…} ]
+
+            datos.filter(dato => dato.type === 'ec').pop()
+            Object { type: "ec", ep: "alsdjflkaklsd" }
+
 
 
             axios.get('https://api.geainternacional.com/v1/endpoints/micrositios').then( response => {
                 var res = response.data;
                 console.log(res);
+                console.log()
 
-                for(let item  of res){
+                /*for(let item  of res){
                     console.log(item);
-                }
+                }*/
 
             });
 
