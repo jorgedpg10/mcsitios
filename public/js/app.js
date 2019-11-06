@@ -1871,9 +1871,59 @@ __webpack_require__.r(__webpack_exports__);
   !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/Urls.vue?vue&type=script&lang=js& ***!
   \***************************************************************************************************************************************************************/
 /*! exports provided: default */
-/***/ (function(module, exports) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-throw new Error("Module build failed (from ./node_modules/babel-loader/lib/index.js):\nSyntaxError: C:\\laragon\\www\\mcsitios\\resources\\js\\components\\Urls.vue: Unexpected token (32:15)\n\n\u001b[0m \u001b[90m 30 | \u001b[39m        undefined\u001b[0m\n\u001b[0m \u001b[90m 31 | \u001b[39m        datos\u001b[33m.\u001b[39mfilter(dato \u001b[33m=>\u001b[39m dato \u001b[33m===\u001b[39m \u001b[32m'ec'\u001b[39m)\u001b[0m\n\u001b[0m\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 32 | \u001b[39m        \u001b[33mArray\u001b[39m []\u001b[0m\n\u001b[0m \u001b[90m    | \u001b[39m               \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 33 | \u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 34 | \u001b[39m        datos\u001b[33m.\u001b[39mfilter(dato \u001b[33m=>\u001b[39m dato\u001b[33m.\u001b[39mtype \u001b[33m===\u001b[39m \u001b[32m'ec'\u001b[39m)\u001b[0m\n\u001b[0m \u001b[90m 35 | \u001b[39m        \u001b[33mArray\u001b[39m [ {…} ]\u001b[0m\n    at Parser.raise (C:\\laragon\\www\\mcsitios\\node_modules\\@babel\\parser\\lib\\index.js:6931:17)\n    at Parser.unexpected (C:\\laragon\\www\\mcsitios\\node_modules\\@babel\\parser\\lib\\index.js:8324:16)\n    at Parser.parseExprAtom (C:\\laragon\\www\\mcsitios\\node_modules\\@babel\\parser\\lib\\index.js:9583:20)\n    at Parser.parseExprSubscripts (C:\\laragon\\www\\mcsitios\\node_modules\\@babel\\parser\\lib\\index.js:9166:23)\n    at Parser.parseMaybeUnary (C:\\laragon\\www\\mcsitios\\node_modules\\@babel\\parser\\lib\\index.js:9146:21)\n    at Parser.parseExprOps (C:\\laragon\\www\\mcsitios\\node_modules\\@babel\\parser\\lib\\index.js:9012:23)\n    at Parser.parseMaybeConditional (C:\\laragon\\www\\mcsitios\\node_modules\\@babel\\parser\\lib\\index.js:8985:23)\n    at Parser.parseMaybeAssign (C:\\laragon\\www\\mcsitios\\node_modules\\@babel\\parser\\lib\\index.js:8931:21)\n    at Parser.parseExpression (C:\\laragon\\www\\mcsitios\\node_modules\\@babel\\parser\\lib\\index.js:8881:23)\n    at Parser.parseSubscript (C:\\laragon\\www\\mcsitios\\node_modules\\@babel\\parser\\lib\\index.js:9251:28)\n    at Parser.parseSubscripts (C:\\laragon\\www\\mcsitios\\node_modules\\@babel\\parser\\lib\\index.js:9187:19)\n    at Parser.parseExprSubscripts (C:\\laragon\\www\\mcsitios\\node_modules\\@babel\\parser\\lib\\index.js:9176:17)\n    at Parser.parseMaybeUnary (C:\\laragon\\www\\mcsitios\\node_modules\\@babel\\parser\\lib\\index.js:9146:21)\n    at Parser.parseExprOps (C:\\laragon\\www\\mcsitios\\node_modules\\@babel\\parser\\lib\\index.js:9012:23)\n    at Parser.parseMaybeConditional (C:\\laragon\\www\\mcsitios\\node_modules\\@babel\\parser\\lib\\index.js:8985:23)\n    at Parser.parseMaybeAssign (C:\\laragon\\www\\mcsitios\\node_modules\\@babel\\parser\\lib\\index.js:8931:21)\n    at Parser.parseExpression (C:\\laragon\\www\\mcsitios\\node_modules\\@babel\\parser\\lib\\index.js:8881:23)\n    at Parser.parseStatementContent (C:\\laragon\\www\\mcsitios\\node_modules\\@babel\\parser\\lib\\index.js:10741:23)\n    at Parser.parseStatement (C:\\laragon\\www\\mcsitios\\node_modules\\@babel\\parser\\lib\\index.js:10612:17)\n    at Parser.parseBlockOrModuleBlockBody (C:\\laragon\\www\\mcsitios\\node_modules\\@babel\\parser\\lib\\index.js:11188:25)\n    at Parser.parseBlockBody (C:\\laragon\\www\\mcsitios\\node_modules\\@babel\\parser\\lib\\index.js:11175:10)\n    at Parser.parseBlock (C:\\laragon\\www\\mcsitios\\node_modules\\@babel\\parser\\lib\\index.js:11159:10)\n    at Parser.parseFunctionBody (C:\\laragon\\www\\mcsitios\\node_modules\\@babel\\parser\\lib\\index.js:10178:24)\n    at Parser.parseFunctionBodyAndFinish (C:\\laragon\\www\\mcsitios\\node_modules\\@babel\\parser\\lib\\index.js:10148:10)\n    at Parser.parseMethod (C:\\laragon\\www\\mcsitios\\node_modules\\@babel\\parser\\lib\\index.js:10102:10)\n    at Parser.parseObjectMethod (C:\\laragon\\www\\mcsitios\\node_modules\\@babel\\parser\\lib\\index.js:10018:19)\n    at Parser.parseObjPropValue (C:\\laragon\\www\\mcsitios\\node_modules\\@babel\\parser\\lib\\index.js:10060:23)\n    at Parser.parseObjectMember (C:\\laragon\\www\\mcsitios\\node_modules\\@babel\\parser\\lib\\index.js:9984:10)\n    at Parser.parseObj (C:\\laragon\\www\\mcsitios\\node_modules\\@babel\\parser\\lib\\index.js:9904:25)\n    at Parser.parseExprAtom (C:\\laragon\\www\\mcsitios\\node_modules\\@babel\\parser\\lib\\index.js:9526:28)\n    at Parser.parseExprSubscripts (C:\\laragon\\www\\mcsitios\\node_modules\\@babel\\parser\\lib\\index.js:9166:23)\n    at Parser.parseMaybeUnary (C:\\laragon\\www\\mcsitios\\node_modules\\@babel\\parser\\lib\\index.js:9146:21)\n    at Parser.parseExprOps (C:\\laragon\\www\\mcsitios\\node_modules\\@babel\\parser\\lib\\index.js:9012:23)\n    at Parser.parseMaybeConditional (C:\\laragon\\www\\mcsitios\\node_modules\\@babel\\parser\\lib\\index.js:8985:23)\n    at Parser.parseMaybeAssign (C:\\laragon\\www\\mcsitios\\node_modules\\@babel\\parser\\lib\\index.js:8931:21)\n    at Parser.parseExportDefaultExpression (C:\\laragon\\www\\mcsitios\\node_modules\\@babel\\parser\\lib\\index.js:11791:24)");
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ __webpack_exports__["default"] = ({
+  name: "urls",
+  data: function data() {
+    return {
+      obj: {}
+    };
+  },
+  mounted: function mounted() {
+    var _this = this;
+
+    var currentUrl = window.location.pathname;
+    var url_limpia = currentUrl.replace('/', '');
+    axios.get('https://api.geainternacional.com/v1/endpoints/micrositios').then(function (response) {
+      var res = response.data;
+      var objeto = res.filter(function (dato) {
+        return dato.iso_pais === url_limpia;
+      }).pop();
+      _this.obj = objeto;
+    });
+    /*
+        res.filter(dato => res.iso_pais == currentUrl).pop()
+        Object { type: "ec", ep: "alsdjflkaklsd" }
+         for(let item  of res){
+            console.log(item);
+        }*/
+  }
+});
 
 /***/ }),
 
@@ -37228,30 +37278,25 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
-}
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "container" }, [
-      _c("div", { staticClass: "row justify-content-center" }, [
-        _c("div", { staticClass: "col-md-8" }, [
-          _c("div", { staticClass: "card" }, [
-            _c("div", { staticClass: "card-header" }, [_vm._v("Url.Vue")]),
-            _vm._v(" "),
-            _c("div", { staticClass: "card-body" }, [
-              _vm._v(
-                "\n                    Urls.vue cargando correctamente\n                "
-              )
-            ])
-          ])
+  return _c("div", { staticClass: "container" }, [
+    _c("div", { staticClass: "row justify-content-center" }, [
+      _c("div", { staticClass: "col-md-8" }, [
+        _c("div", { staticClass: "card" }, [
+          _c("div", { staticClass: "card-header" }, [_vm._v("Url.Vue")]),
+          _vm._v(" "),
+          _c("div", { staticClass: "card-body" }, [
+            _vm._v(
+              "\n                    Urls.vue cargando correctamente\n                "
+            )
+          ]),
+          _vm._v(" "),
+          _c("div", [_c("p", [_vm._v(_vm._s(_vm.obj.endpoint))])])
         ])
       ])
     ])
-  }
-]
+  ])
+}
+var staticRenderFns = []
 render._withStripped = true
 
 
