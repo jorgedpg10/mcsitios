@@ -21,13 +21,14 @@
         name: "urls",
         data(){
             return {
-                obj: {}
+                obj: {},
+                token: "",
             }
         },
         mounted(){
 
             var currentUrl = window.location.pathname;
-            var url_limpia = currentUrl.replace('/','')
+            var url_limpia = currentUrl.replace('/','');
 
              axios.get('https://api.geainternacional.com/v1/endpoints/micrositios').then( response => {
                  var res = response.data;
@@ -36,6 +37,8 @@
                     this.obj = objeto;
 
              });
+
+            // var url = obj.endpoint +'/condicion-general/5E9Mp';
 
         }
     }

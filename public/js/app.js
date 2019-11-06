@@ -1897,7 +1897,8 @@ __webpack_require__.r(__webpack_exports__);
   name: "urls",
   data: function data() {
     return {
-      obj: {}
+      obj: {},
+      token: ""
     };
   },
   mounted: function mounted() {
@@ -1911,7 +1912,7 @@ __webpack_require__.r(__webpack_exports__);
         return dato.iso_pais === url_limpia;
       }).pop();
       _this.obj = objeto;
-    });
+    }); // var url = obj.endpoint +'/condicion-general/5E9Mp';
   }
 });
 
