@@ -93,22 +93,21 @@
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-var getBtn = document.getElementById('get-btn');
+/*const getBtn = document.getElementById('get-btn');
 
-var getData = function getData() {
-  axios.get('https://api.geainternacional.com/v1/endpoints/micrositios').then(function (response) {
-    // returns a promise
-    var endp = response.data[0].endpoint;
-    console.log(endp);
-    document.getElementById("content").innerHTML = endp;
-    /*for (const res in response.data) {
-        console.log(`response.${res} = ${response[res]}`);
-    }
-    */
-  });
+const getData = () => {
+    axios.get('https://api.geainternacional.com/v1/endpoints/micrositios').then(response => { // returns a promise
+        var endp = response.data[0].endpoint ;
+        console.log(endp);
+
+
+        document.getElementById("content").innerHTML = endp;
+
+
+    });
 };
 
-getBtn.addEventListener('click', getData);
+getBtn.addEventListener('click', getData);*/
 
 /***/ }),
 

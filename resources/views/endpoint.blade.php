@@ -8,10 +8,10 @@
 
 </head>
 <body>
-<section id="control-center">
+{{--<section id="control-center">
     <button id="get-btn">GET Data</button>
     <div id="content"></div>
-</section>
+</section>--}}
 
 <div id="app">
     <urls></urls>
@@ -20,7 +20,7 @@
 
 
 <script src="/js/app.js"></script>
-<script src="/js/axios.js"></script>
+{{--<script src="/js/axios.js"></script>--}}
 
 </body>
 </html>

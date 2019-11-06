@@ -1893,10 +1893,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "urls",
   data: function data() {
@@ -1916,12 +1912,6 @@ __webpack_require__.r(__webpack_exports__);
       }).pop();
       _this.obj = objeto;
     });
-    /*
-        res.filter(dato => res.iso_pais == currentUrl).pop()
-        Object { type: "ec", ep: "alsdjflkaklsd" }
-         for(let item  of res){
-            console.log(item);
-        }*/
   }
 });
 
@@ -37282,15 +37272,13 @@ var render = function() {
     _c("div", { staticClass: "row justify-content-center" }, [
       _c("div", { staticClass: "col-md-8" }, [
         _c("div", { staticClass: "card" }, [
-          _c("div", { staticClass: "card-header" }, [_vm._v("Url.Vue")]),
+          _c("div", { staticClass: "card-header" }),
           _vm._v(" "),
           _c("div", { staticClass: "card-body" }, [
-            _vm._v(
-              "\n                    Urls.vue cargando correctamente\n                "
-            )
-          ]),
-          _vm._v(" "),
-          _c("div", [_c("p", [_vm._v(_vm._s(_vm.obj.endpoint))])])
+            _c("p", [_vm._v("el endopoint al que debemos ir es:")]),
+            _vm._v(" "),
+            _c("p", [_vm._v(_vm._s(_vm.obj.endpoint))])
+          ])
         ])
       ])
     ])

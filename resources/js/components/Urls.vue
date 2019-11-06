@@ -3,16 +3,12 @@
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card">
-                    <div class="card-header">Url.Vue</div>
+                    <div class="card-header"></div>
 
                     <div class="card-body">
-                        Urls.vue cargando correctamente
-                    </div>
-
-                    <div>
+                        <p>el endopoint al que debemos ir es:</p>
                         <p>{{ obj.endpoint }}</p>
                     </div>
-
 
                 </div>
             </div>
@@ -39,22 +35,12 @@
                     var objeto = res.filter( dato => dato.iso_pais === url_limpia ).pop();
                     this.obj = objeto;
 
-
              });
-
-
-             /*
-                 res.filter(dato => res.iso_pais == currentUrl).pop()
-                 Object { type: "ec", ep: "alsdjflkaklsd" }
-
-                 for(let item  of res){
-                     console.log(item);
-                 }*/
-
-
 
         }
     }
+
+
 </script>
 
 <style scoped>

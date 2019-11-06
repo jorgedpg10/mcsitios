@@ -16,5 +16,10 @@ Route::get('/', function () {
 });
 
 Route::get('/ec', function () {
-    return view('ec');
+    return view('endpoint');
+});
+
+
+Route::get('/gt', function () {
+    return view('endpoint');
 });

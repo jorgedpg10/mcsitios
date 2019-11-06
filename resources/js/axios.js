@@ -1,4 +1,4 @@
-const getBtn = document.getElementById('get-btn');
+/*const getBtn = document.getElementById('get-btn');
 
 const getData = () => {
     axios.get('https://api.geainternacional.com/v1/endpoints/micrositios').then(response => { // returns a promise
@@ -8,11 +8,8 @@ const getData = () => {
 
         document.getElementById("content").innerHTML = endp;
 
-        /*for (const res in response.data) {
-            console.log(`response.${res} = ${response[res]}`);
-        }
-*/
+
     });
 };
 
-getBtn.addEventListener('click', getData);
+getBtn.addEventListener('click', getData);*/
