@@ -5,7 +5,7 @@
                 <div class="card">
                     <div class="card-header"></div>
 
-                    <div class="card-body">
+                    <div class="card-body" >
                         <!--<p>el endopoint :</p>
                         <p>{{ obj.endpoint }}</p>-->
                         <p>la imagen es:</p>

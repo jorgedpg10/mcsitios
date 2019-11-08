@@ -14,7 +14,13 @@
 </section>--}}
 
 <div id="app">
-    <urls></urls>
+
+
+
+
+        <example-component></example-component>
+
+
 </div>
 
 
