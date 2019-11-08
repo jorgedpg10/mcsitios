@@ -6,7 +6,7 @@
                     <div class="card-header"></div>
 
                     <div class="card-body">
-                        <p>el endopoint al que debemos ir es:</p>
+                        <p>el endopoint :</p>
                         <p>{{ obj.endpoint }}</p>
                     </div>
 
@@ -17,6 +17,8 @@
 </template>
 
 <script>
+    var download = require("downloadjs");
+
     export default {
         name: "urls",
         data(){
@@ -38,10 +40,13 @@
                 var blob = new Blob([b64], {Type: 'text/plain' });
                 var url = URL.createObjectURL(blob);
                 console.log(url); */
+                //download(new Blob(["hello world"]), "dlTextBlob.txt", "text/plain");
 
-                var blob = new Blob([response.data.pdf_base64], {Type: 'application/pdf' });
+                
+                download(new Blob([myString]) , "foto.jpg", "image/jpeg" );
+              /*  var blob = new Blob([response.data.pdf_base64], {Type: 'application/pdf' });
                 var url = URL.createObjectURL(blob);
-                console.log(url);
+                console.log(url); */
                 //console.log(response.data);
 
             });
