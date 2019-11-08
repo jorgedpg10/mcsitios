@@ -1893,43 +1893,34 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 var download = __webpack_require__(/*! downloadjs */ "./node_modules/downloadjs/download.js");
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "urls",
   data: function data() {
     return {
-      obj: {} //token: "",
+      obj: {},
+      direccion: '' //token: "",
 
     };
   },
   mounted: function mounted() {
-    axios.get('http://nimp_pruebas.develop.geaecuador.ec/api/v1/condicion-general/5E9Mp').then(function (response) {
-      //console.log(response.data.pdf_base64);
+    var _this = this;
 
-      /*
-      var myString = "Mi nombre es Jorge";
-      var b64 = btoa(myString);
-      var unicode = atob(b64);
-       console.log(b64);
-      console.log(unicode);
-      var blob = new Blob([b64], {Type: 'text/plain' });
-      var url = URL.createObjectURL(blob);
-      console.log(url); */
-      //download(new Blob(["hello world"]), "dlTextBlob.txt", "text/plain");
-      download(new Blob([myString]), "foto.jpg", "image/jpeg");
-      /*  var blob = new Blob([response.data.pdf_base64], {Type: 'application/pdf' });
-        var url = URL.createObjectURL(blob);
-        console.log(url); */
-      //console.log(response.data);
+    axios.get('https://picsum.photos/v2/list').then(function (response) {
+      console.log(response.data[0].download_url); //
+
+      _this.direccion = response.data[0].download_url;
     });
     /*  var currentUrl = window.location.pathname;
       var url_limpia = currentUrl.replace('/','');
         axios.get('https://api.geainternacional.com/v1/endpoints/micrositios').then( response => {
            var res = response.data;
-               var objeto = res.filter( dato => dato.iso_pais === url_limpia ).pop();
+              var objeto = res.filter( dato => dato.iso_pais === url_limpia ).pop();
               this.obj = objeto;
-        });*/
+       });*/
     // var url = obj.endpoint +'/condicion-general/5E9Mp';
   }
 });
@@ -37467,9 +37458,9 @@ var render = function() {
           _c("div", { staticClass: "card-header" }),
           _vm._v(" "),
           _c("div", { staticClass: "card-body" }, [
-            _c("p", [_vm._v("el endopoint :")]),
+            _c("p", [_vm._v("la imagen es:")]),
             _vm._v(" "),
-            _c("p", [_vm._v(_vm._s(_vm.obj.endpoint))])
+            _c("img", { attrs: { src: _vm.direccion, width: "300" } })
           ])
         ])
       ])
