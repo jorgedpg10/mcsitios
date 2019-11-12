@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Mcsitios</title>
-
+    <link type="text/css" rel="stylesheet" href="{{ mix('css/app.css') }}">
 </head>
 <body>
 {{--<section id="control-center">
@@ -14,9 +14,7 @@
 </section>--}}
 
 <div id="app">
-
         <example-component></example-component>
-
 </div>
 
 

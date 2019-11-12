@@ -10,6 +10,11 @@ window.Vue = require('vue');
 
 import ElementUI from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { faUserSecret, faUser, faIdCard} from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
+
+library.add(faUserSecret, faUser, faIdCard);
 
 /**
  * The following block of code may be used to automatically register your
@@ -25,6 +30,9 @@ Vue.use(ElementUI);
 Vue.component('example-component', require('./components/ExampleComponent.vue').default);
 Vue.component('urls', require('./components/Urls.vue').default);
 Vue.component('modal', require('./components/modal.vue').default);
+Vue.component('font-awesome-icon', FontAwesomeIcon);
+
+Vue.config.productionTip = false;
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to

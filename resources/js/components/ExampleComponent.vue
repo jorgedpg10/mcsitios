@@ -3,34 +3,71 @@
 
         <el-container>
             <el-header>
-                <a href="https://api.whatsapp.com/send?phone=593958637937" target="_blank" class="btn btn-success btn-lg rounded-circle border border-white float-right mr-2">
+                <a href="https://api.whatsapp.com/send?phone=593958637937" target="_blank"
+                   class="btn btn-success btn-lg rounded-circle border border-white float-right mr-2">
                     <i class="fab fa-whatsapp"></i>
                 </a>
             </el-header>
+
             <el-main>
                 <el-row>
-                    <el-col :span="3"><div class="grid-content bg-purple"></div></el-col>
-                    <el-col :span="18"><div class="grid-content bg-purple-light"><img src="/images/terminos.png" style="width:100%"></div></el-col>
-                    <el-col :span="3"><div class="grid-content bg-purple"></div></el-col>
+                    <el-col :span="3">
+                        <div class="grid-content bg-purple"></div>
+                    </el-col>
+                    <el-col :span="18">
+                        <div class="grid-content bg-purple-light"><img src="/images/terminos.png" style="width:100%">
+                        </div>
+                    </el-col>
+                    <el-col :span="3">
+                        <div class="grid-content bg-purple"></div>
+                    </el-col>
                 </el-row>
 
                 <el-row>
 
                     <el-col :span="24">
                         <!--<div class="grid-content bg-purple-light">-->
-                            <el-button type="primary" round @click="open">Decargar términos de servicio y asistencia </el-button>
-                            <el-button type="primary" round>Solicitar factura electrónica</el-button>
+                        <el-button type="primary" round @click="dialogVisible = true">Decargar términos de servicio y
+                            asistencia
+                        </el-button>
+                        <el-button type="primary" round>Solicitar factura electrónica</el-button>
+
                         <!--</div>-->
                     </el-col>
+
 
                 </el-row>
 
 
-
             </el-main>
+
             <el-footer></el-footer>
         </el-container>
 
+        <el-dialog
+            title="Más cerca de asistirte"
+            :visible.sync="dialogVisible"
+            width="30%"
+            :before-close="handleClose">
+
+            <span>
+
+            <div id="group-cedula" class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text"><b class="text-danger">*</b>&nbsp;<font-awesome-icon icon="id-card" /></span>
+                </div>
+                <input type="text" class="form-control border" id="input-cedula" aria-label="Small" aria-describedby="input-cedula" placeholder="Ingrese su cédula">
+
+            </div>
+                
+                <el-checkbox v-model="checked">Acepto descargar los Términos del Servicio de Asistencia que conforman los servicios contenidos en el Producto, a partir de este momento, podrá disfrutar los beneficios que aquí se describen</el-checkbox>
+
+            </span>
+            <span slot="footer" class="dialog-footer">
+                        <el-button @click="dialogVisible = false">Cancel</el-button>
+                        <el-button type="primary" @click="dialogVisible = false">Confirm</el-button>
+            </span>
+        </el-dialog>
 
     </div>
 </template>
@@ -40,11 +77,24 @@
         data() {
             return {
                 value1: true,
-                value2: true
+                value2: true,
+                dialogVisible: false,
+                input: '', //este campo será para ingresar la cèdula
+                checked: false
+            }
+        },
+        methods: {
+            handleClose(done) {
+                this.$confirm('Are you sure to close this dialog?')
+                    .then(_ => {
+                        done();
+                    })
+                    .catch(_ => {});
             }
         }
-
     };
+
+
 </script>
 
 
