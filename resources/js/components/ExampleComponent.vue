@@ -47,8 +47,7 @@
         <el-dialog
             title="Más cerca de asistirte"
             :visible.sync="dialogVisible"
-            width="30%"
-            :before-close="handleClose">
+            width="30%">
 
             <span>
 
@@ -59,7 +58,7 @@
                 <input type="text" class="form-control border" id="input-cedula" aria-label="Small" aria-describedby="input-cedula" placeholder="Ingrese su cédula">
 
             </div>
-                
+
                 <el-checkbox v-model="checked">Acepto descargar los Términos del Servicio de Asistencia que conforman los servicios contenidos en el Producto, a partir de este momento, podrá disfrutar los beneficios que aquí se describen</el-checkbox>
 
             </span>
@@ -84,13 +83,7 @@
             }
         },
         methods: {
-            handleClose(done) {
-                this.$confirm('Are you sure to close this dialog?')
-                    .then(_ => {
-                        done();
-                    })
-                    .catch(_ => {});
-            }
+
         }
     };
 
