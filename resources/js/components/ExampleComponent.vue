@@ -152,4 +152,16 @@
     .el-container:nth-child(7) .el-aside {
         line-height: 320px;
     }
+
+    .el-checkbox__label {
+        word-break: break-word;
+    }
+
+    .el-checkbox{
+        display: flex;
+        text-align: justify;
+        align-items: center;
+        white-space: inherit;
+    }
+
 </style>
