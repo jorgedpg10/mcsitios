@@ -41,7 +41,7 @@
                <!-- </el-row>-->
 
             </el-main>
-            
+
         </el-container>
 
         <!-- dialog 1 -->
@@ -78,18 +78,39 @@
             :visible.sync="dialogVis"
             width="30%">
 
-            <span>
-
-
-
-
-
-            </span>
+            <el-radio v-model="radio" :label="1">Datos </el-radio>
+            <el-radio v-model="radio" :label="2">Consumidor Final</el-radio>
             <span slot="footer" class="dialog-footer">
-                        <el-button @click="dialogVis = false">Cancel</el-button>
-                        <el-button type="primary" @click="dialogVis = false">Confirm</el-button>
+                        <el-button @click="">Cancel</el-button>
+                        <el-button type="primary" @click="verificar">Confirm</el-button> <!--@click="dialogVis = false"-->
             </span>
         </el-dialog>
+        <!-- fin dialog 2 -->
+
+        <!-- dialog datos -->
+        <el-dialog
+            class="modal-dial"
+            title="este es el DialogDatos"
+            :visible.sync="dialogDatos"
+            width="30%">
+
+
+
+            <div  class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text"><b class="text-danger">*</b>&nbsp;<font-awesome-icon icon="id-card" /></span>
+                </div>
+                <input type="text" class="form-control border" id="" aria-label="Small" aria-describedby="input-cedula" placeholder="Ingrese su cédula">
+
+            </div>
+
+            <span slot="footer" class="dialog-footer">
+                        <el-button @click="">Cancel</el-button>
+                        <el-button type="primary" @click="">Confirm</el-button>
+            </span>
+        </el-dialog>
+        <!-- fin dialogDatos -->
+
     </div>
 </template>
 
@@ -101,12 +122,28 @@
                 value2: true,
                 dialogVisible: false,
                 dialogVis: false,
+                dialogDatos: false,
                 input: '', //este campo será para ingresar la cèdula
-                checked: false
+                checked: false,
+                radio: 0
             }
         },
         methods: {
+            verificar(){
+                this.modalReset();
+                console.log("Radio: ", this.radio);
+                console.log("Condicion: ", this.radio === 1);
+                this.dialogDatos = true;
+                if (this.radio === 1){
+                    this.dialogDatos = true;
+                }else if(this.radio === 2){
 
+                }
+            },
+            modalReset(){
+                this.dialogVis = false;
+                this.dialogDatos = false;
+            }
         }
     };
 
