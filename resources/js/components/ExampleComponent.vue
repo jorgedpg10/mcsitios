@@ -1,6 +1,7 @@
 <template>
     <div>
 
+        <!--<font-awesome-icon :icon="['fab', 'whatsapp']" />-->
         <el-container>
             <el-header>
                 <a href="https://api.whatsapp.com/send?phone=593958637937" target="_blank"
