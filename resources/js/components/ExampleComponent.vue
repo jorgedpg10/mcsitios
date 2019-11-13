@@ -4,47 +4,47 @@
         <!--<font-awesome-icon :icon="['fab', 'whatsapp']" />-->
         <el-container>
             <el-header>
+                <div class="float-right">
                 <a href="https://api.whatsapp.com/send?phone=593958637937" target="_blank"
-                   class="btn btn-success btn-lg rounded-circle border border-white float-right mr-2">
-                    <i class="fab fa-whatsapp"></i>
-                </a>
+                       class="btn btn-success btn-lg rounded-circle border border-white mr-2">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                </div>
             </el-header>
 
             <el-main>
                 <el-row>
                     <el-col :span="3">
-                        <div class="grid-content bg-purple"></div>
+                        <div class="grid-content"></div>
                     </el-col>
                     <el-col :span="18">
-                        <div class="grid-content bg-purple-light"><img src="/images/terminos.png" style="width:100%">
+                        <div class="grid-content"><img src="/images/terminos.png" >
                         </div>
                     </el-col>
                     <el-col :span="3">
-                        <div class="grid-content bg-purple"></div>
+                        <div class="grid-content"></div>
                     </el-col>
                 </el-row>
 
-                <el-row>
-
+         <!--       <el-row>-->
                     <el-col :span="24">
-                        <!--<div class="grid-content bg-purple-light">-->
-                        <el-button type="primary" round @click="dialogVisible = true">Decargar términos de servicio y
-                            asistencia
-                        </el-button>
-                        <el-button type="primary" round>Solicitar factura electrónica</el-button>
 
-                        <!--</div>-->
+                        <el-button class="boton-usuario" type="primary" round @click="dialogVisible = true">Decargar términos
+                            de servicio y asistencia
+                        </el-button>
+                        <el-button class="boton-usuario" type="primary" round @click="dialogVis = true">
+                            Solicitar factura electrónica
+                        </el-button>
+
                     </el-col>
 
-
-                </el-row>
-
+               <!-- </el-row>-->
 
             </el-main>
-
-            <el-footer></el-footer>
+            
         </el-container>
 
+        <!-- dialog 1 -->
         <el-dialog
             class="modal-dial"
             title="Más cerca de asistirte"
@@ -69,7 +69,27 @@
                         <el-button type="primary" @click="dialogVisible = false">Confirm</el-button>
             </span>
         </el-dialog>
+        <!-- fin dialog 1 -->
 
+        <!-- dialog 2 -->
+        <el-dialog
+            class="modal-dial"
+            title="Tipo de Factura"
+            :visible.sync="dialogVis"
+            width="30%">
+
+            <span>
+
+
+
+
+
+            </span>
+            <span slot="footer" class="dialog-footer">
+                        <el-button @click="dialogVis = false">Cancel</el-button>
+                        <el-button type="primary" @click="dialogVis = false">Confirm</el-button>
+            </span>
+        </el-dialog>
     </div>
 </template>
 
@@ -80,6 +100,7 @@
                 value1: true,
                 value2: true,
                 dialogVisible: false,
+                dialogVis: false,
                 input: '', //este campo será para ingresar la cèdula
                 checked: false
             }
@@ -93,8 +114,8 @@
 </script>
 
 
-<style>
-    .el-row {
+<style scoped>
+    /*.el-row {
         margin-bottom: 20px;
     &:last-child {
          margin-bottom: 0;
@@ -105,7 +126,7 @@
     }
     .bg-purple-dark {
         background: #99a9bf;
-    }
+    }*/
     .bg-purple {
         background: #d3dce6;
     }
@@ -116,7 +137,7 @@
         border-radius: 4px;
         min-height: 36px;
     }
-    .row-bg {
+    /*.row-bg {
         padding: 10px 0;
         background-color: #f9fafc;
     }
@@ -139,7 +160,13 @@
         background-color: #E9EEF3;
         color: #333;
         text-align: center;
-        line-height: 160px;
+        line-height: 80px;
+    }*/
+
+    .el-main {
+
+        text-align: center;
+        line-height: 80px;
     }
 
     body > .el-container {
@@ -169,6 +196,14 @@
 
     .el-dialog{
         min-width: 300px;
+    }
+
+    .boton-usuario{
+        width: 200px;
+    }
+
+    .el-button >>> span {
+        white-space: initial;
     }
 
 </style>
