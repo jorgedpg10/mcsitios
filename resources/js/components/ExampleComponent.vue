@@ -45,6 +45,7 @@
         </el-container>
 
         <el-dialog
+            class="modal-dial"
             title="Más cerca de asistirte"
             :visible.sync="dialogVisible"
             width="30%">
@@ -162,6 +163,11 @@
         text-align: justify;
         align-items: center;
         white-space: inherit;
+
+    }
+
+    .el-dialog{
+        min-width: 300px;
     }
 
 </style>
