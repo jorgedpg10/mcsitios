@@ -14,7 +14,7 @@
 </section>--}}
 
 <div id="app">
-        <example-component></example-component>
+        <soporte-tecnico></soporte-tecnico>
 </div>
 
 

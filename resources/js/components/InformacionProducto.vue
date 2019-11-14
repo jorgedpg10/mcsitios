@@ -26,7 +26,6 @@
                     </el-col>
                 </el-row>
 
-         <!--       <el-row>-->
                     <el-col :span="24">
 
                         <el-button class="boton-usuario" type="primary" round @click="dialogVisible = true">Decargar términos
@@ -37,8 +36,6 @@
                         </el-button>
 
                     </el-col>
-
-               <!-- </el-row>-->
 
             </el-main>
 
