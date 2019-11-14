@@ -11,10 +11,10 @@ window.Vue = require('vue');
 import ElementUI from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
 import { library } from '@fortawesome/fontawesome-svg-core';
-import { faUserSecret, faUser, faIdCard} from '@fortawesome/free-solid-svg-icons';
+import { faUserSecret, faUser, faIdCard, faEnvelope} from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 import { faWhatsapp } from '@fortawesome/free-brands-svg-icons';
-library.add(faUserSecret, faUser, faIdCard, faWhatsapp);
+library.add(faUserSecret, faUser, faIdCard, faWhatsapp, faEnvelope);
 
 /**
  * The following block of code may be used to automatically register your

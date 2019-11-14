@@ -44,7 +44,7 @@
 
         </el-container>
 
-        <!-- dialog 1 -->
+        <!-- dialog descargar Términos -->
         <el-dialog
             class="modal-dial"
             title="Más cerca de asistirte"
@@ -65,8 +65,8 @@
 
             </span>
             <span slot="footer" class="dialog-footer">
-                        <el-button @click="dialogVisible = false">Cancel</el-button>
-                        <el-button type="primary" @click="dialogVisible = false">Confirm</el-button>
+                        <el-button @click="dialogVisible = false">Cancelar</el-button>
+                        <el-button type="primary" @click="dialogVisible = false">Descargar</el-button>
             </span>
         </el-dialog>
         <!-- fin dialog 1 -->
@@ -81,8 +81,8 @@
             <el-radio v-model="radio" :label="1">Datos </el-radio>
             <el-radio v-model="radio" :label="2">Consumidor Final</el-radio>
             <span slot="footer" class="dialog-footer">
-                        <el-button @click="">Cancel</el-button>
-                        <el-button type="primary" @click="verificar">Confirm</el-button> <!--@click="dialogVis = false"-->
+                        <el-button @click="">Cancelar</el-button>
+                        <el-button type="primary" @click="verificar">Siguiente</el-button> <!--@click="dialogVis = false"-->
             </span>
         </el-dialog>
         <!-- fin dialog 2 -->
@@ -90,12 +90,13 @@
         <!-- dialog datos -->
         <el-dialog
             class="modal-dial"
-            title="este es el DialogDatos"
+            title="Más cerca de asistirte"
             :visible.sync="dialogDatos"
             width="30%">
 
+            <p class="text-muted texto-modal">Por favor ingrese sus datos fiscales para recibir su factura.</p>
 
-
+            <!--ingrese cedula-->
             <div  class="input-group mb-3">
                 <div class="input-group-prepend">
                     <span class="input-group-text"><b class="text-danger">*</b>&nbsp;<font-awesome-icon icon="id-card" /></span>
@@ -104,12 +105,84 @@
 
             </div>
 
+            <!--ingrese nombres y apellidos-->
+            <div  class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text"><b class="text-danger">*</b>&nbsp;<i class="fas fa-user"></i></span>
+                </div>
+                <input type="text" class="form-control border" id="" aria-label="Small" aria-describedby="input-cedula" placeholder="Ingrese su nombre y apellidos">
+
+            </div>
+            <!--ingrese su correo electronico-->
+            <div  class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text"><b class="text-danger">*</b>&nbsp;<font-awesome-icon icon="envelope" /></i></span>
+                </div>
+                <input type="text" class="form-control border" id="" aria-label="Small" aria-describedby="input-cedula" placeholder="Ingrese su correo electrónico">
+
+            </div>
+
+            <!--ingrese su dirección-->
+            <div  class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text"><b class="text-danger">*</b>&nbsp;<i class="fas fa-map-marker-alt"></i></span>
+                </div>
+                <input type="text" class="form-control border" id="" aria-label="Small" aria-describedby="input-cedula" placeholder="Ingrese su dirección">
+
+            </div>
+
+            <!--Ingrese su teléfono-->
+            <div  class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text"><b class="text-danger">*</b>&nbsp;<i class="fas fa-mobile-alt"></i></span>
+                </div>
+                <input type="text" class="form-control border" id="" aria-label="Small" aria-describedby="input-cedula" placeholder="Ingrese su teléfono">
+
+            </div>
+
             <span slot="footer" class="dialog-footer">
-                        <el-button @click="">Cancel</el-button>
-                        <el-button type="primary" @click="">Confirm</el-button>
+                        <el-button @click="">Cancelar</el-button>
+                        <el-button type="primary" @click="">Solicitar</el-button>
             </span>
         </el-dialog>
         <!-- fin dialogDatos -->
+
+        <!--Inicio dialogConsumidorFinal-->
+        <el-dialog
+            class="modal-dial"
+            title="Más cerca de asistirte"
+            :visible.sync="dialogConsumidorFinal"
+            width="30%">
+
+            <p class="text-muted texto-modal">Por favor ingrese sus datos para recibir su factura.</p>
+
+            <!--ingrese cedula-->
+            <div  class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text"><b class="text-danger">*</b>&nbsp;<font-awesome-icon icon="id-card" /></span>
+                </div>
+                <input type="text" class="form-control border" id="" aria-label="Small" aria-describedby="input-cedula" placeholder="Ingrese su cédula">
+
+            </div>
+
+
+            <!--ingrese su correo electronico-->
+            <div  class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text"><b class="text-danger">*</b>&nbsp;<font-awesome-icon icon="envelope" /></i></span>
+                </div>
+                <input type="text" class="form-control border" id="" aria-label="Small" aria-describedby="input-cedula" placeholder="Ingrese su correo electrónico">
+
+            </div>
+
+
+
+            <span slot="footer" class="dialog-footer">
+                        <el-button @click="">Cancelar</el-button>
+                        <el-button type="primary" @click="">Solicitar</el-button>
+            </span>
+        </el-dialog>
+        <!--Fin dialogConsumidorFinal-->
 
     </div>
 </template>
@@ -118,12 +191,11 @@
     export default {
         data() {
             return {
-                value1: true,
-                value2: true,
                 dialogVisible: false,
                 dialogVis: false,
                 dialogDatos: false,
-                input: '', //este campo será para ingresar la cèdula
+                dialogConsumidorFinal: false,
+                input: '', //este campo será para ingresar la cédula
                 checked: false,
                 radio: 0
             }
@@ -131,13 +203,11 @@
         methods: {
             verificar(){
                 this.modalReset();
-                console.log("Radio: ", this.radio);
-                console.log("Condicion: ", this.radio === 1);
-                this.dialogDatos = true;
+
                 if (this.radio === 1){
                     this.dialogDatos = true;
                 }else if(this.radio === 2){
-
+                    this.dialogConsumidorFinal = true;
                 }
             },
             modalReset(){
@@ -228,11 +298,12 @@
         text-align: justify;
         align-items: center;
         white-space: inherit;
+        word-break: break-word;
 
     }
 
-    .el-dialog{
-        min-width: 300px;
+    .modal-dial >>> .el-dialog{
+        min-width: 315px;
     }
 
     .boton-usuario{
@@ -242,5 +313,12 @@
     .el-button >>> span {
         white-space: initial;
     }
+
+    .texto-modal{
+        white-space: initial;
+        word-break: break-word;
+    }
+
+
 
 </style>
