@@ -23,3 +23,7 @@ Route::get('/ec', function () {
 Route::get('/gt', function () {
     return view('endpoint');
 });
+
+Route::get('/st', function () {
+    return view('soporte');
+});

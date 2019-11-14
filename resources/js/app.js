@@ -27,7 +27,7 @@ library.add(faUserSecret, faUser, faIdCard, faWhatsapp, faEnvelope);
 // const files = require.context('./', true, /\.vue$/i)
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 Vue.use(ElementUI);
-Vue.component('example-component', require('./components/ExampleComponent.vue').default);
+Vue.component('informacion-producto', require('./components/InformacionProducto').default);
 Vue.component('urls', require('./components/Urls.vue').default);
 Vue.component('modal', require('./components/modal.vue').default);
 Vue.component('font-awesome-icon', FontAwesomeIcon);
