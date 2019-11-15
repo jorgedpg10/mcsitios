@@ -5,9 +5,6 @@
       <change afterPath="$PROJECT_DIR$/resources/js/components/SoporteTecnico.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/InformacionProducto.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/InformacionProducto.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/soporte.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/soporte.blade.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
