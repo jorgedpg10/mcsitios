@@ -18,7 +18,7 @@
                         <div class="grid-content"></div>
                     </el-col>
                     <el-col :span="18">
-                        <div class="grid-content"><img src="/images/terminos.png" >
+                        <div class="grid-content"><img :src="ubicacionImagen" >
                         </div>
                     </el-col>
                     <el-col :span="3">
@@ -194,8 +194,19 @@
                 dialogConsumidorFinal: false,
                 input: '', //este campo será para ingresar la cédula
                 checked: false,
-                radio: 0
+                radio: 0,
+                ubicacionImagen: ''
+
             }
+        },
+        mounted(){
+            axios.get('https://api.geainternacional.com/api/v1/micrositios/ec/informacion/5E9Mp',
+                { 'headers': { 'HTTP-CLIENT-ID': '11', 'HTTP-CLIENT-SECRET': 'pv1LYTKOJdxKLbe93TRiidXyqshFXmzc'} })
+                .then( response => {
+                    var myString = 'data:image/png;base64,' + response.data.imagen_base64;
+                    this.ubicacionImagen = myString;
+
+                });
         },
         methods: {
             verificar(){

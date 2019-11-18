@@ -11,17 +11,13 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+
+Route::get('/prueba', function () {
+    return view('pruebaBase64');
 });
 
-Route::get('/ec', function () {
-    return view('endpoint');
-});
-
-
-Route::get('/gt', function () {
-    return view('endpoint');
+Route::get('/in', function () {
+    return view('InformacionProducto');
 });
 
 Route::get('/st', function () {
@@ -29,9 +25,6 @@ Route::get('/st', function () {
 });
 
 Route::get('/pp', function () {
-    return view('soporte');
+    return view('politicaPrivacidad');
 });
 
-Route::get('/prueba', function () {
-    return view('pruebaBase64');
-});
