@@ -31,9 +31,11 @@
             }
         },
         mounted(){
-            axios.get('https://picsum.photos/v2/list').then( response => {
-                console.log(response.data[0].download_url); //
-                this.direccion = response.data[0].download_url;
+            axios.get('https://api.geainternacional.com/api/v1/micrositios/ec/informacion/5E9Mp',
+                { 'headers': { 'HTTP-CLIENT-ID': '11', 'HTTP-CLIENT-SECRET': 'pv1LYTKOJdxKLbe93TRiidXyqshFXmzc'} })
+                .then( response => {
+                //console.log(response.data[0].download_url);
+                //this.direccion = response.data[0].download_url;
 
             });
 

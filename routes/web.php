@@ -31,3 +31,7 @@ Route::get('/st', function () {
 Route::get('/pp', function () {
     return view('soporte');
 });
+
+Route::get('/prueba', function () {
+    return view('pruebaBase64');
+});
