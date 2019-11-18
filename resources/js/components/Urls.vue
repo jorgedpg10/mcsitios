@@ -36,6 +36,13 @@
                 .then( response => {
                 //console.log(response.data[0].download_url);
                 //this.direccion = response.data[0].download_url;
+                    console.log(response.data.imagen_base64);
+                    var myString = 'data:image/png;base64,' + response.data.imagen_base64;
+
+                    console.log(myString);
+                    var image = new Image();
+                    image.src = myString;
+                    document.body.appendChild(image);
 
             });
 
