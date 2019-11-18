@@ -27,3 +27,7 @@ Route::get('/gt', function () {
 Route::get('/st', function () {
     return view('soporte');
 });
+
+Route::get('/pp', function () {
+    return view('soporte');
+});
