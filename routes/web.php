@@ -16,9 +16,8 @@ Route::get('/prueba', function () {
     return view('pruebaBase64');
 });
 
-Route::get('/in', function () {
-    return view('InformacionProducto');
-});
+
+Route::get('/{pais}/informacion/{token}','InformacionController@index');
 
 Route::get('/st', function () {
     return view('soporte');
