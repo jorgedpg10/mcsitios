@@ -1,7 +1,6 @@
 <template>
     <div>
 
-        <p>{{iso_pais}}</p>
         <!--<font-awesome-icon :icon="['fab', 'whatsapp']" />-->
         <el-container>
             <el-header>
@@ -200,12 +199,17 @@
 
             }
         },
-        props:[
-            'iso_pais'
-        ]
+        props: {
+            iso_pais: {type: String},
+            token: {type: String},
+        }
+
         ,
         mounted(){
-            axios.get('https://api.geainternacional.com/api/v1/micrositios/ec/informacion/5E9Mp',
+            var direccion = 'https://api.geainternacional.com/api/v1/micrositios/' + this.iso_pais + '/informacion/' +
+            this.token;
+
+            axios.get(direccion ,
                 { 'headers': { 'HTTP-CLIENT-ID': '11', 'HTTP-CLIENT-SECRET': 'pv1LYTKOJdxKLbe93TRiidXyqshFXmzc'} })
                 .then( response => {
                     var myString = 'data:image/png;base64,' + response.data.imagen_base64;

@@ -14,7 +14,7 @@
 </section>--}}
 
 <div id="app">
-        <informacion-producto :iso_pais='@json($pais)'></informacion-producto>
+        <informacion-producto :iso_pais='@json($pais)' :token='@json($token)' ></informacion-producto>
 </div>
 
 
