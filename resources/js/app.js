@@ -31,6 +31,7 @@ Vue.component('informacion-producto', require('./components/InformacionProducto'
 Vue.component('soporte-tecnico', require('./components/SoporteTecnico').default);
 Vue.component('urls', require('./components/Urls.vue').default);
 Vue.component('modal', require('./components/modal.vue').default);
+Vue.component('politica-privacidad', require('./components/PoliticaPrivacidad').default);
 Vue.component('font-awesome-icon', FontAwesomeIcon);
 
 Vue.config.productionTip = false;

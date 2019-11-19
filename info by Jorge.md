@@ -39,3 +39,7 @@ para imprimir la foto que devuelva.
 
 ---
 ¿como hago las validaciones para dejar descargar documentos?
+
+---
+var currentUrl = window.location.pathname;
+var url_limpia = currentUrl.replace('/','');

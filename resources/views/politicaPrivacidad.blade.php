@@ -11,7 +11,7 @@
 
 
 <div id="app">
-
+    <politica-privacidad></politica-privacidad>
 </div>
 
 
@@ -51,4 +51,6 @@
         margin: 5rem;
         padding: 2rem;
     }
+
+
 </style>
