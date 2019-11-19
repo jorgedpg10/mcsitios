@@ -11,4 +11,6 @@ la API con esos valores
 validar con la base las cedulas para saber si tienen
 permitido descargar documentos.
 
+cambiar la direccion de axios para que necesite headers
+
 

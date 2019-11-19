@@ -1,6 +1,7 @@
 <template>
     <div>
 
+        <p>{{iso_pais}}</p>
         <!--<font-awesome-icon :icon="['fab', 'whatsapp']" />-->
         <el-container>
             <el-header>
@@ -28,8 +29,8 @@
 
                     <el-col :span="24">
 
-                        <el-button class="boton-usuario" type="primary" round @click="dialogVisible = true">Decargar términos
-                            de servicio y asistencia
+                        <el-button class="boton-usuario" type="primary" round @click="dialogVisible = true">
+                            Decargar términos de servicio y asistencia
                         </el-button>
                         <el-button class="boton-usuario" type="primary" round @click="dialogVis = true">
                             Solicitar factura electrónica
@@ -199,6 +200,10 @@
 
             }
         },
+        props:[
+            'iso_pais'
+        ]
+        ,
         mounted(){
             axios.get('https://api.geainternacional.com/api/v1/micrositios/ec/informacion/5E9Mp',
                 { 'headers': { 'HTTP-CLIENT-ID': '11', 'HTTP-CLIENT-SECRET': 'pv1LYTKOJdxKLbe93TRiidXyqshFXmzc'} })
