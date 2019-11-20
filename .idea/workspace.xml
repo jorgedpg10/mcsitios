@@ -2,10 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="98d35145-4eb7-4b8b-9322-db478dd63211" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/PoliticaController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/InformacionController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/InformacionController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/components/InformacionProducto.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/InformacionProducto.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/InformacionProducto.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/InformacionProducto.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/PoliticaPrivacidad.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/PoliticaPrivacidad.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/InformacionProducto.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/informacionProducto.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/politicaPrivacidad.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/politicaPrivacidad.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />

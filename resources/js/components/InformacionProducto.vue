@@ -5,7 +5,7 @@
         <el-container>
             <el-header>
                 <div class="float-right">
-                <a href="https://api.whatsapp.com/send?phone=593958637937" target="_blank"
+                    <a href="https://api.whatsapp.com/send?phone=593958637937" target="_blank"
                        class="btn btn-success btn-lg rounded-circle border border-white mr-2">
                         <i class="fab fa-whatsapp"></i>
                     </a>
@@ -18,7 +18,9 @@
                         <div class="grid-content"></div>
                     </el-col>
                     <el-col :span="18">
-                        <div class="grid-content"><img :src="ubicacionImagen" >
+                        <div class="grid-content">
+
+                            <img :src="ubicacionImagen">
                         </div>
                     </el-col>
                     <el-col :span="3">
@@ -26,16 +28,16 @@
                     </el-col>
                 </el-row>
 
-                    <el-col :span="24">
+                <el-col :span="24">
 
-                        <el-button class="boton-usuario" type="primary" round @click="dialogVisible = true">
-                            Decargar términos de servicio y asistencia
-                        </el-button>
-                        <el-button class="boton-usuario" type="primary" round @click="dialogVis = true">
-                            Solicitar factura electrónica
-                        </el-button>
+                    <el-button class="boton-usuario" type="primary" round @click="dialogVisible = true">
+                        Decargar términos de servicio y asistencia
+                    </el-button>
+                    <el-button class="boton-usuario" type="primary" round @click="dialogVis = true">
+                        Solicitar factura electrónica
+                    </el-button>
 
-                    </el-col>
+                </el-col>
 
             </el-main>
 
@@ -52,9 +54,10 @@
 
             <div id="group-cedula" class="input-group mb-3">
                 <div class="input-group-prepend">
-                    <span class="input-group-text"><b class="text-danger">*</b>&nbsp;<font-awesome-icon icon="id-card" /></span>
+                    <span class="input-group-text"><b class="text-danger">*</b>&nbsp;<font-awesome-icon icon="id-card"/></span>
                 </div>
-                <input type="text" class="form-control border" id="input-cedula" aria-label="Small" aria-describedby="input-cedula" placeholder="Ingrese su cédula">
+                <input type="text" class="form-control border" id="input-cedula" aria-label="Small"
+                       aria-describedby="input-cedula" placeholder="Ingrese su cédula">
 
             </div>
 
@@ -75,11 +78,12 @@
             :visible.sync="dialogVis"
             width="30%">
 
-            <el-radio v-model="radio" :label="1">Datos </el-radio>
+            <el-radio v-model="radio" :label="1">Datos</el-radio>
             <el-radio v-model="radio" :label="2">Consumidor Final</el-radio>
             <span slot="footer" class="dialog-footer">
                         <el-button @click="">Cancelar</el-button>
-                        <el-button type="primary" @click="verificar">Siguiente</el-button> <!--@click="dialogVis = false"-->
+                        <el-button type="primary" @click="verificar">Siguiente</el-button>
+                <!--@click="dialogVis = false"-->
             </span>
         </el-dialog>
         <!-- fin dialog Solicitar Factura -->
@@ -94,46 +98,55 @@
             <p class="text-muted texto-modal">Por favor ingrese sus datos fiscales para recibir su factura.</p>
 
             <!--ingrese cedula-->
-            <div  class="input-group mb-3">
+            <div class="input-group mb-3">
                 <div class="input-group-prepend">
-                    <span class="input-group-text"><b class="text-danger">*</b>&nbsp;<font-awesome-icon icon="id-card" /></span>
+                    <span class="input-group-text"><b class="text-danger">*</b>&nbsp;<font-awesome-icon icon="id-card"/></span>
                 </div>
-                <input type="text" class="form-control border" id="" aria-label="Small" aria-describedby="input-cedula" placeholder="Ingrese su cédula">
+                <input type="text" class="form-control border" id="" aria-label="Small" aria-describedby="input-cedula"
+                       placeholder="Ingrese su cédula">
 
             </div>
 
             <!--ingrese nombres y apellidos-->
-            <div  class="input-group mb-3">
+            <div class="input-group mb-3">
                 <div class="input-group-prepend">
                     <span class="input-group-text"><b class="text-danger">*</b>&nbsp;<i class="fas fa-user"></i></span>
                 </div>
-                <input type="text" class="form-control border" id="" aria-label="Small" aria-describedby="input-cedula" placeholder="Ingrese su nombre y apellidos">
+                <input type="text" class="form-control border" id="" aria-label="Small" aria-describedby="input-cedula"
+                       placeholder="Ingrese su nombre y apellidos">
 
             </div>
             <!--ingrese su correo electronico-->
-            <div  class="input-group mb-3">
+            <div class="input-group mb-3">
                 <div class="input-group-prepend">
-                    <span class="input-group-text"><b class="text-danger">*</b>&nbsp;<font-awesome-icon icon="envelope" /></i></span>
+                    <span class="input-group-text"><b class="text-danger">*</b>&nbsp;<font-awesome-icon
+                        icon="envelope"/>
+                        </i></span>
                 </div>
-                <input type="text" class="form-control border" id="" aria-label="Small" aria-describedby="input-cedula" placeholder="Ingrese su correo electrónico">
+                <input type="text" class="form-control border" id="" aria-label="Small" aria-describedby="input-cedula"
+                       placeholder="Ingrese su correo electrónico">
 
             </div>
 
             <!--ingrese su dirección-->
-            <div  class="input-group mb-3">
+            <div class="input-group mb-3">
                 <div class="input-group-prepend">
-                    <span class="input-group-text"><b class="text-danger">*</b>&nbsp;<i class="fas fa-map-marker-alt"></i></span>
+                    <span class="input-group-text"><b class="text-danger">*</b>&nbsp;<i
+                        class="fas fa-map-marker-alt"></i></span>
                 </div>
-                <input type="text" class="form-control border" id="" aria-label="Small" aria-describedby="input-cedula" placeholder="Ingrese su dirección">
+                <input type="text" class="form-control border" id="" aria-label="Small" aria-describedby="input-cedula"
+                       placeholder="Ingrese su dirección">
 
             </div>
 
             <!--Ingrese su teléfono-->
-            <div  class="input-group mb-3">
+            <div class="input-group mb-3">
                 <div class="input-group-prepend">
-                    <span class="input-group-text"><b class="text-danger">*</b>&nbsp;<i class="fas fa-mobile-alt"></i></span>
+                    <span class="input-group-text"><b class="text-danger">*</b>&nbsp;<i
+                        class="fas fa-mobile-alt"></i></span>
                 </div>
-                <input type="text" class="form-control border" id="" aria-label="Small" aria-describedby="input-cedula" placeholder="Ingrese su teléfono">
+                <input type="text" class="form-control border" id="" aria-label="Small" aria-describedby="input-cedula"
+                       placeholder="Ingrese su teléfono">
 
             </div>
 
@@ -154,24 +167,27 @@
             <p class="text-muted texto-modal">Por favor ingrese sus datos para recibir su factura.</p>
 
             <!--ingrese cedula-->
-            <div  class="input-group mb-3">
+            <div class="input-group mb-3">
                 <div class="input-group-prepend">
-                    <span class="input-group-text"><b class="text-danger">*</b>&nbsp;<font-awesome-icon icon="id-card" /></span>
+                    <span class="input-group-text"><b class="text-danger">*</b>&nbsp;<font-awesome-icon icon="id-card"/></span>
                 </div>
-                <input type="text" class="form-control border" id="" aria-label="Small" aria-describedby="input-cedula" placeholder="Ingrese su cédula">
+                <input type="text" class="form-control border" id="" aria-label="Small" aria-describedby="input-cedula"
+                       placeholder="Ingrese su cédula">
 
             </div>
 
 
             <!--ingrese su correo electronico-->
-            <div  class="input-group mb-3">
+            <div class="input-group mb-3">
                 <div class="input-group-prepend">
-                    <span class="input-group-text"><b class="text-danger">*</b>&nbsp;<font-awesome-icon icon="envelope" /></i></span>
+                    <span class="input-group-text"><b class="text-danger">*</b>&nbsp;<font-awesome-icon
+                        icon="envelope"/>
+                        </i></span>
                 </div>
-                <input type="text" class="form-control border" id="" aria-label="Small" aria-describedby="input-cedula" placeholder="Ingrese su correo electrónico">
+                <input type="text" class="form-control border" id="" aria-label="Small" aria-describedby="input-cedula"
+                       placeholder="Ingrese su correo electrónico">
 
             </div>
-
 
 
             <span slot="footer" class="dialog-footer">
@@ -205,29 +221,29 @@
         }
 
         ,
-        mounted(){
+        mounted() {
             var direccion = 'https://api.geainternacional.com/api/v1/micrositios/' + this.iso_pais + '/informacion/' +
-            this.token;
+                this.token;
 
-            axios.get(direccion ,
-                { 'headers': { 'HTTP-CLIENT-ID': '11', 'HTTP-CLIENT-SECRET': 'pv1LYTKOJdxKLbe93TRiidXyqshFXmzc'} })
-                .then( response => {
-                    var myString = 'data:image/png;base64,' + response.data.imagen_base64;
-                    this.ubicacionImagen = myString;
-
+            axios.get(direccion,
+                {'headers': {'HTTP-CLIENT-ID': '11', 'HTTP-CLIENT-SECRET': 'pv1LYTKOJdxKLbe93TRiidXyqshFXmzc'}})
+                .then(response => {
+                    /*var myString = 'data:image/png;base64,' + response.data.imagen_base64; */
+                    this.ubicacionImagen = response.data.url;
+                    
                 });
         },
         methods: {
-            verificar(){
+            verificar() {
                 this.modalReset();
 
-                if (this.radio === 1){
+                if (this.radio === 1) {
                     this.dialogDatos = true;
-                }else if(this.radio === 2){
+                } else if (this.radio === 2) {
                     this.dialogConsumidorFinal = true;
                 }
             },
-            modalReset(){
+            modalReset() {
                 this.dialogVis = false;
                 this.dialogDatos = false;
             }
@@ -243,9 +259,11 @@
     .bg-purple {
         background: #d3dce6;
     }
+
     .bg-purple-light {
         background: #e5e9f2;
     }
+
     .grid-content {
         border-radius: 4px;
         min-height: 36px;
@@ -275,7 +293,7 @@
         word-break: break-word;
     }
 
-    .el-checkbox{
+    .el-checkbox {
         display: flex;
         text-align: justify;
         align-items: center;
@@ -284,11 +302,11 @@
 
     }
 
-    .modal-dial >>> .el-dialog{
+    .modal-dial >>> .el-dialog {
         min-width: 315px;
     }
 
-    .boton-usuario{
+    .boton-usuario {
         width: 200px;
     }
 
@@ -296,11 +314,10 @@
         white-space: initial;
     }
 
-    .texto-modal{
+    .texto-modal {
         white-space: initial;
         word-break: break-word;
     }
-
 
 
 </style>

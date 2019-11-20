@@ -23,6 +23,8 @@ Route::get('/st', function () {
     return view('soporte');
 });
 
+Route::get('/{pais}/politica-de-privacidad/{token}','PoliticaController@index');
+
 Route::get('/pp', function () {
     return view('politicaPrivacidad');
 });

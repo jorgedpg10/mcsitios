@@ -11,7 +11,7 @@
 
 
 <div id="app">
-    <politica-privacidad></politica-privacidad>
+    <politica-privacidad :iso_pais='@json($pais)' :token='@json($token)'></politica-privacidad>
 </div>
 
 
