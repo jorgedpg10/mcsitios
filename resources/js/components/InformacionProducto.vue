@@ -51,22 +51,24 @@
             width="30%">
 
             <span>
-
+            <!--aqui deberia ir el mensaje de error-->
             <div id="group-cedula" class="input-group mb-3">
                 <div class="input-group-prepend">
                     <span class="input-group-text"><b class="text-danger">*</b>&nbsp;<font-awesome-icon icon="id-card"/></span>
                 </div>
-                <input type="text" class="form-control border" id="input-cedula" aria-label="Small"
+                <input type="text" class="form-control border" v-model="cedula" aria-label="Small"
                        aria-describedby="input-cedula" placeholder="Ingrese su cédula">
 
             </div>
 
-                <el-checkbox v-model="checked">Acepto descargar los Términos del Servicio de Asistencia que conforman los servicios contenidos en el Producto, a partir de este momento, podrá disfrutar los beneficios que aquí se describen</el-checkbox>
+                <el-checkbox v-model="checked">Acepto descargar los Términos del Servicio de Asistencia que conforman
+                    los servicios contenidos en el Producto, a partir de este momento, podrá disfrutar los beneficios
+                    que aquí se describen</el-checkbox>
 
             </span>
             <span slot="footer" class="dialog-footer">
                         <el-button @click="dialogVisible = false">Cancelar</el-button>
-                        <el-button type="primary" @click="dialogVisible = false">Descargar</el-button>
+                        <el-button type="primary"  @click="comprobarCedula">Descargar</el-button>
             </span>
         </el-dialog>
         <!-- descargar Términos -->
@@ -211,7 +213,9 @@
                 input: '', //este campo será para ingresar la cédula
                 checked: false,
                 radio: 0,
-                ubicacionImagen: ''
+                ubicacionImagen: '',
+                cedula: '',
+                pdfurl:''
 
             }
         },
@@ -230,7 +234,7 @@
                 .then(response => {
                     /*var myString = 'data:image/png;base64,' + response.data.imagen_base64; */
                     this.ubicacionImagen = response.data.url;
-                    
+
                 });
         },
         methods: {
@@ -243,10 +247,36 @@
                     this.dialogConsumidorFinal = true;
                 }
             },
+            errorDescargaTerminos() {
+                this.$message({
+                    message: 'Usted no puede descargar',
+                    type: 'warning'
+                });
+            },
             modalReset() {
                 this.dialogVis = false;
                 this.dialogDatos = false;
-            }
+            },
+            comprobarCedula(){
+
+                    var token = 'QsEtu'; //ver si este token debería cambiar
+                    var direccion2 = 'http://nimp_pruebas.develop.geaecuador.ec/api/v1/termino-de-uso/' + this.cedula +'/'+ token;
+
+                axios.get(direccion2)
+                    .then(response => {
+
+                        /* ESTO ABRE EL PDF EN UNA VENTANA NUEVA USANDO LA URL
+                        var windowJorge = window.open(response.data.url, "Terminos de uso"); */
+
+                        /* ESTO ABRE EL PDF EN NUEVA VENTANA USANDO BASE64 */
+                        this.pdfurl = "data:application/pdf;base64," + response.data.pdf_base64;
+                        let pdfWindow = window.open("");
+
+                        pdfWindow.document.write("<iframe width='100%' height='100%' src='" + this.pdfurl + "'></iframe>");
+
+                    });
+
+            },
         }
     };
 

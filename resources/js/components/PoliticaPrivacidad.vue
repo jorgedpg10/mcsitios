@@ -28,7 +28,7 @@
 
         ,
         mounted() {
-            var direccion = 'https://api.geainternacional.com/api/v1/micrositios/' + this.iso_pais + '/politoca-de-privacidad/' +
+            var direccion = 'https://api.geainternacional.com/api/v1/micrositios/' + this.iso_pais + '/politica-de-privacidad/' +
                 this.token;
             axios.get('http://nimp_pruebas.develop.geaecuador.ec/api/v1/condicion-general/5E9Mp').then(response => {
 

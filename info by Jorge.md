@@ -3,7 +3,7 @@ cg: condiciones generales, pdf
 pp: politicas de privacidad, pdf
 in: informacion del producto, png
 st: soporte tecnico, png
-tu: terminos de uso, pdf
+tu: terminos de uso, pdf = vamos a asumir que esto se llama terminos de servicio
 
 18/11
 Llegamos a la conclusión con Jose de que la siguiente API 
@@ -38,8 +38,13 @@ api.geainternacional.com/api/v1/siga/micrositios/{ISOCODE}/politica-de-privacida
 para imprimir la foto que devuelva.
 
 ---
-¿como hago las validaciones para dejar descargar documentos?
+http://nimp_pruebas.develop.geaecuador.ec/api/v1/termino-de-uso/0945786238/QsEtu // esta es la url para descargar el archivo 
+de terminos de servicio (que necesita cedula)
 
----
-var currentUrl = window.location.pathname;
-var url_limpia = currentUrl.replace('/','');
+http://nimp_pruebas.develop.geaecuador.ec/api/v1/condicion-general/5E9Mp // esta va a ser la url para
+descargar el archivo que no necesita cedula (cond general)
+
+
+
+
+
