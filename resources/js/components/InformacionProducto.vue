@@ -104,7 +104,7 @@
                 <div class="input-group-prepend">
                     <span class="input-group-text"><b class="text-danger">*</b>&nbsp;<font-awesome-icon icon="id-card"/></span>
                 </div>
-                <input type="text" class="form-control border" id="" aria-label="Small" aria-describedby="input-cedula"
+                <input type="text" class="form-control border" v-model="cedula2" aria-label="Small" aria-describedby="input-cedula"
                        placeholder="Ingrese su cédula">
 
             </div>
@@ -114,7 +114,7 @@
                 <div class="input-group-prepend">
                     <span class="input-group-text"><b class="text-danger">*</b>&nbsp;<i class="fas fa-user"></i></span>
                 </div>
-                <input type="text" class="form-control border" id="" aria-label="Small" aria-describedby="input-cedula"
+                <input type="text" class="form-control border" v-model="nombres" aria-label="Small" aria-describedby="input-cedula"
                        placeholder="Ingrese su nombre y apellidos">
 
             </div>
@@ -123,9 +123,9 @@
                 <div class="input-group-prepend">
                     <span class="input-group-text"><b class="text-danger">*</b>&nbsp;<font-awesome-icon
                         icon="envelope"/>
-                        </i></span>
+                    </span>
                 </div>
-                <input type="text" class="form-control border" id="" aria-label="Small" aria-describedby="input-cedula"
+                <input type="text" class="form-control border" v-model="correo" aria-label="Small" aria-describedby="input-cedula"
                        placeholder="Ingrese su correo electrónico">
 
             </div>
@@ -136,7 +136,7 @@
                     <span class="input-group-text"><b class="text-danger">*</b>&nbsp;<i
                         class="fas fa-map-marker-alt"></i></span>
                 </div>
-                <input type="text" class="form-control border" id="" aria-label="Small" aria-describedby="input-cedula"
+                <input type="text" class="form-control border" v-model="direccion" aria-label="Small" aria-describedby="input-cedula"
                        placeholder="Ingrese su dirección">
 
             </div>
@@ -147,14 +147,14 @@
                     <span class="input-group-text"><b class="text-danger">*</b>&nbsp;<i
                         class="fas fa-mobile-alt"></i></span>
                 </div>
-                <input type="text" class="form-control border" id="" aria-label="Small" aria-describedby="input-cedula"
+                <input type="text" class="form-control border" v-model="telefono" aria-label="Small" aria-describedby="input-cedula"
                        placeholder="Ingrese su teléfono">
 
             </div>
 
             <span slot="footer" class="dialog-footer">
                         <el-button @click="">Cancelar</el-button>
-                        <el-button type="primary" @click="">Solicitar</el-button>
+                        <el-button type="primary" @click="envioDatosFactura">Solicitar</el-button>
             </span>
         </el-dialog>
         <!-- fin dialogDatos -->
@@ -214,9 +214,13 @@
                 checked: false,
                 radio: 0,
                 ubicacionImagen: '',
-                cedula: '',
-                pdfurl:''
-
+                cedula1: '',
+                pdfurl:'',
+                cedula2:'',
+                nombres:'',
+                correo:'',
+                direccion:'',
+                telefono:''
             }
         },
         props: {
@@ -276,6 +280,18 @@
 
                     });
 
+            },
+            envioDatosFactura(){
+                axios.post('//cobranza/cash/valida_vigencia_afiliados_micrositio', {
+                    firstName: 'Fred',
+                    lastName: 'Flintstone'
+                })
+                    .then(function (response) {
+                        console.log(response);
+                    })
+                    .catch(function (error) {
+                        console.log(error);
+                    });
             },
         }
     };
