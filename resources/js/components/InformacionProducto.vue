@@ -56,19 +56,19 @@
                 <div class="input-group-prepend">
                     <span class="input-group-text"><b class="text-danger">*</b>&nbsp;<font-awesome-icon icon="id-card"/></span>
                 </div>
-                <input type="text" class="form-control border" v-model="cedula" aria-label="Small"
+                <input type="text" class="form-control border" v-model="cedula1" aria-label="Small"
                        aria-describedby="input-cedula" placeholder="Ingrese su cédula">
 
             </div>
 
-                <el-checkbox v-model="checked">Acepto descargar los Términos del Servicio de Asistencia que conforman
+                <el-checkbox v-model="aceptaTerminos">Acepto descargar los Términos del Servicio de Asistencia que conforman
                     los servicios contenidos en el Producto, a partir de este momento, podrá disfrutar los beneficios
                     que aquí se describen</el-checkbox>
 
             </span>
             <span slot="footer" class="dialog-footer">
                         <el-button @click="dialogVisible = false">Cancelar</el-button>
-                        <el-button type="primary"  @click="comprobarCedula">Descargar</el-button>
+                        <el-button type="primary" @click="validarDescarga">Descargar</el-button>
             </span>
         </el-dialog>
         <!-- descargar Términos -->
@@ -104,7 +104,8 @@
                 <div class="input-group-prepend">
                     <span class="input-group-text"><b class="text-danger">*</b>&nbsp;<font-awesome-icon icon="id-card"/></span>
                 </div>
-                <input type="text" class="form-control border" v-model="cedula2" aria-label="Small" aria-describedby="input-cedula"
+                <input type="text" class="form-control border" v-model="cedula2" aria-label="Small"
+                       aria-describedby="input-cedula"
                        placeholder="Ingrese su cédula">
 
             </div>
@@ -114,7 +115,8 @@
                 <div class="input-group-prepend">
                     <span class="input-group-text"><b class="text-danger">*</b>&nbsp;<i class="fas fa-user"></i></span>
                 </div>
-                <input type="text" class="form-control border" v-model="nombres" aria-label="Small" aria-describedby="input-cedula"
+                <input type="text" class="form-control border" v-model="nombres" aria-label="Small"
+                       aria-describedby="input-cedula"
                        placeholder="Ingrese su nombre y apellidos">
 
             </div>
@@ -125,7 +127,8 @@
                         icon="envelope"/>
                     </span>
                 </div>
-                <input type="text" class="form-control border" v-model="correo" aria-label="Small" aria-describedby="input-cedula"
+                <input type="text" class="form-control border" v-model="correo" aria-label="Small"
+                       aria-describedby="input-cedula"
                        placeholder="Ingrese su correo electrónico">
 
             </div>
@@ -136,7 +139,8 @@
                     <span class="input-group-text"><b class="text-danger">*</b>&nbsp;<i
                         class="fas fa-map-marker-alt"></i></span>
                 </div>
-                <input type="text" class="form-control border" v-model="direccion" aria-label="Small" aria-describedby="input-cedula"
+                <input type="text" class="form-control border" v-model="direccion" aria-label="Small"
+                       aria-describedby="input-cedula"
                        placeholder="Ingrese su dirección">
 
             </div>
@@ -147,7 +151,8 @@
                     <span class="input-group-text"><b class="text-danger">*</b>&nbsp;<i
                         class="fas fa-mobile-alt"></i></span>
                 </div>
-                <input type="text" class="form-control border" v-model="telefono" aria-label="Small" aria-describedby="input-cedula"
+                <input type="text" class="form-control border" v-model="telefono" aria-label="Small"
+                       aria-describedby="input-cedula"
                        placeholder="Ingrese su teléfono">
 
             </div>
@@ -184,7 +189,7 @@
                 <div class="input-group-prepend">
                     <span class="input-group-text"><b class="text-danger">*</b>&nbsp;<font-awesome-icon
                         icon="envelope"/>
-                        </i></span>
+                    </span>
                 </div>
                 <input type="text" class="form-control border" id="" aria-label="Small" aria-describedby="input-cedula"
                        placeholder="Ingrese su correo electrónico">
@@ -211,16 +216,16 @@
                 dialogDatos: false,
                 dialogConsumidorFinal: false,
                 input: '', //este campo será para ingresar la cédula
-                checked: false,
+                aceptaTerminos: false,
                 radio: 0,
                 ubicacionImagen: '',
                 cedula1: '',
-                pdfurl:'',
-                cedula2:'',
-                nombres:'',
-                correo:'',
-                direccion:'',
-                telefono:''
+                pdfurl: '',
+                cedula2: '',
+                nombres: '',
+                correo: '',
+                direccion: '',
+                telefono: ''
             }
         },
         props: {
@@ -251,38 +256,47 @@
                     this.dialogConsumidorFinal = true;
                 }
             },
-            errorDescargaTerminos() {
-                this.$message({
-                    message: 'Usted no puede descargar',
-                    type: 'warning'
-                });
-            },
             modalReset() {
                 this.dialogVis = false;
                 this.dialogDatos = false;
             },
-            comprobarCedula(){
+            validarDescarga() {
 
-                    var token = 'QsEtu'; //ver si este token debería cambiar
-                    var direccion2 = 'http://nimp_pruebas.develop.geaecuador.ec/api/v1/termino-de-uso/' + this.cedula +'/'+ token;
+                var token = 'QsEtu'; //ver si este token debería cambiar
+                var direccion2 = 'http://nimp_pruebas.develop.geaecuador.ec/api/v1/termino-de-uso/' + this.cedula1 + '/' + token;
 
                 axios.get(direccion2)
                     .then(response => {
 
-                        /* ESTO ABRE EL PDF EN UNA VENTANA NUEVA USANDO LA URL
-                        var windowJorge = window.open(response.data.url, "Terminos de uso"); */
+                        if (response.data.pdf_base64 == undefined) {
 
-                        /* ESTO ABRE EL PDF EN NUEVA VENTANA USANDO BASE64 */
-                        this.pdfurl = "data:application/pdf;base64," + response.data.pdf_base64;
-                        let pdfWindow = window.open("");
+                            this.$message({
+                                message: 'Su cédula no está registrada',
+                                type: 'warning'
+                            });
 
-                        pdfWindow.document.write("<iframe width='100%' height='100%' src='" + this.pdfurl + "'></iframe>");
+                        } else if (this.aceptaTerminos == false) {
+                            this.$message({
+                                message: 'Debes aceptar los Términos para continuar',
+                                type: 'warning'
+                            });
+                        } else {
+                            /* ESTO ABRE EL PDF EN UNA VENTANA NUEVA USANDO LA URL
+                                var windowJorge = window.open(response.data.url, "Terminos de uso"); */
+
+                            /* ESTO ABRE EL PDF EN NUEVA VENTANA USANDO BASE64 */
+                            this.pdfurl = "data:application/pdf;base64," + response.data.pdf_base64;
+                            let pdfWindow = window.open("");
+
+                            pdfWindow.document.write("<iframe width='100%' height='100%' src='" + this.pdfurl + "'></iframe>");
+
+                        }
 
                     });
 
             },
-            envioDatosFactura(){
-                axios.post('//cobranza/cash/valida_vigencia_afiliados_micrositio', {
+            envioDatosFactura() {
+                axios.post('/cobranza/cash/valida_vigencia_afiliados_micrositio', {
                     firstName: 'Fred',
                     lastName: 'Flintstone'
                 })
@@ -293,6 +307,12 @@
                         console.log(error);
                     });
             },
+            open3() {
+                this.$message({
+                    message: 'Warning, this is a warning message.',
+                    type: 'warning'
+                });
+            }
         }
     };
 

@@ -3,10 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="98d35145-4eb7-4b8b-9322-db478dd63211" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/info by Jorge.md" beforeDir="false" afterPath="$PROJECT_DIR$/info by Jorge.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/components/InformacionProducto.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/InformacionProducto.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/PoliticaPrivacidad.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/PoliticaPrivacidad.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/todo by Jorge.md" beforeDir="false" afterPath="$PROJECT_DIR$/todo by Jorge.md" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -122,7 +122,9 @@
     </include_path>
   </component>
   <component name="ProjectId" id="1TD0anEuw5zN6JNzD3ivdElYLLy" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
